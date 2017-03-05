@@ -12,6 +12,7 @@ $(document).ready(function() {
 			currentImage.src = newURL;
 			csdkImageEditor.close();
 			console.log(newURL);
+      $("#save-image-button").attr("href", newURL);
 		},
 		onError: function(errorObj) {
 			console.log(errorObj.code);

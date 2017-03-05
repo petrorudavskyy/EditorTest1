@@ -5,3 +5,7 @@
 .button-panel {
   margin-bottom: 10px;
 }
+
+#save-image-button {
+	text-decoration: none;
+}
