@@ -54,11 +54,12 @@ $(document).ready(function() {
   
   $('.image img').click(function(event) {
 		// detect data-id for later
-		var id = $(this).data('id');
+		var id = $(this).data('id');  
 		// grab src to replace #editable-image
 		var src = $(this).attr('src');
 		// set #editable-image
 		var img = $('#editable-image');
+
 
 		img.fadeOut('fast', function() {
 			$(this).attr({src: src,});
@@ -76,4 +77,32 @@ $(document).ready(function() {
   function imageIsLoaded(e) {
     $('#editable-image').attr('src', e.target.result);
   };
+  //search field
+  $("#search").click(function(){
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+    // http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
+    {
+      tags: $("#searchterm").val(),
+      tagmode: "any",
+      format: "json"
+    },
+      function(data) {
+        $.each(data.items, function(i,item){
+          $("<img/>").attr("src", item.media.m).prependTo("#search-filter");
+          if ( i == 10 ) return false;
+
+          $('#search-filter img').click(function(event) {
+            // grab src to replace #editable-image
+            var src = $(this).attr('src');
+            // set #editable-image
+            var img = $('#editable-image');
+
+            img.fadeOut('fast', function() {
+              $(this).attr({src: src,});
+              $(this).fadeIn('fast');
+            });
+          });
+        });
+      });
+  });
 });

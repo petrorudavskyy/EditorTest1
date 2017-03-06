@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Image Editor</title>
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
@@ -42,45 +43,70 @@
           <button id="form-button" class="btn btn-primary" type="submit"><a class="fa fa-check"></a> Submit</button>
         </form>
       </div>
+
 		</div>
 
 		<div class=" gallery col-md-10">
-			<img id="editable-image" class="img-responsive image-holder col-xs-9 col-lg-9 col-md-9" src="/images/1.jpg"/>
+			<img id="editable-image" class="img-responsive image-holder col-lg-9 col-md-9 col-xs-12  " src="/images/1.jpg"/>
           
-      <div class="gallery-images col-xs-3 col-lg-3 col-md-3">
-        <div class="image">
-          <img src="images/1.jpg" data-id="1">
+      <div class="gallery-images col-xs-12 col-lg-3 col-md-3">
+        <div class="col-xs-12 col-lg-12 col-md-12 text-center">
+          <input id="searchterm" class="col-xs-12 col-lg-12 col-md-12" placeholder="Search image" />
+          <button id="search" class="btn btn-primary">Search</button>
         </div>
-        <div class="image">
-          <img src="images/2.jpg" data-id="2">
+        <div class="gal-image col-xs-12 col-lg-12 col-md-12">
+          <div class="image" id="search-filter"></div>
+          <div class="image">
+            <img src="images/1.jpg" data-id="1">
+          </div>
+          <div class="image">
+            <img src="images/2.jpg" data-id="2">
+          </div>
+          <div class="image">
+            <img src="images/3.jpg" data-id="3">
+          </div>
+          <div class="image">
+            <img src="images/4.jpg" data-id="4">
+          </div>
+          <div class="image">
+            <img src="images/5.jpg" data-id="5">
+          </div>
+          <div class="image">
+            <img src="images/6.jpg" data-id="6">
+          </div>
+          <div class="image">
+            <img src="images/7.jpg" data-id="7">
+          </div>
+          <div class="image">
+            <img src="images/8.jpg" data-id="8">
+          </div>
+          <div class="image">
+            <img src="images/9.jpg" data-id="9">
+          </div>
+          <div class="clear clearfix"></div>
         </div>
-        <div class="image">
-          <img src="images/3.jpg" data-id="3">
-        </div>
-        <div class="image">
-          <img src="images/4.jpg" data-id="4">
-        </div>
-        <div class="image">
-          <img src="images/5.jpg" data-id="5">
-        </div>
-        <div class="image">
-          <img src="images/6.jpg" data-id="6">
-        </div>
-        <div class="image">
-          <img src="images/7.jpg" data-id="7">
-        </div>
-        <div class="image">
-          <img src="images/8.jpg" data-id="8">
-        </div>
-        <div class="image">
-          <img src="images/9.jpg" data-id="9">
-        </div>
-      </div>  
-      <div class="clear clearfix"></div>
-		</div>
+      </div>       
+		</div>  
 	</div>
 
-
+  <footer class="row">
+    <div class="col-xs-12 col-lg-8 col-md-8">
+      <h4 class="text-center">Usage</h4>
+        <p>Whole web page consist of three panels, left and right sidebars, and panel with a photo.Left sidebar consists of buttons with different functionality.You can edit, reset, save the image, and also upload from the device or by URL.On the right sidebar, you can enter the photo that you want to edit, and see it in slider below. Or those default.When you click "Edit Image", you will see a pop-up window. There you can do with the image all that you want.</p>
+      <h5 class="text-center">Create your own Mona Lisa ;)</h6>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4">
+      <div class="col-xs-12 col-lg-6 col-md-6 text-center">
+        <h4>Contact with me</h4>       
+        <a href="https://www.facebook.com/petro.rudavskyi" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/in/petro-rudavskyi-761490136/" target="_blank"><img src="images/linkedin.png" alt="LinkendIn"></a>
+      </div>
+      <div class="col-xs-12 col-lg-6 col-md-6 text-center">
+        <h4>Fork at GitHub</h4>
+        <a href="https://github.com/petrorudavskyy/EditorTest1" target="_blank"><img src="images/git.png" alt="Git"></a>
+      </div>
+    </div>
+  </footer>
 	
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="http://feather.aviary.com/imaging/v3/editor.js"></script>
