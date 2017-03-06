@@ -4,6 +4,7 @@
   <meta charset="utf-8">
 	<title>Image Editor</title>
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
 </head>
@@ -29,12 +30,57 @@
             <button class="btn btn-success btn-block button-panel">Save Image</button>
           </a>
 				</div>
+        <div class="col-md-12">
+          <button class="btn btn-success btn-file btn-block" id = "upload-image">
+            Upload Image<input type="file" accept="image/*" >
+          </button>
+        </div>
 			</div>
+      <div class="image-url text-center">
+        <form class="url" id="url-form">
+          <input class="url-box col-md-12" type="text" placeholder="Image URL" required />
+          <button id="form-button" class="btn btn-primary" type="submit"><a class="fa fa-check"></a> Submit</button>
+        </form>
+      </div>
 		</div>
-		<div class="col-md-9">
-			<img id="editable-image" class="img-responsive" src="/images/Mers.jpg"/>
+
+		<div class=" gallery col-md-10">
+			<img id="editable-image" class="img-responsive image-holder col-xs-9 col-lg-9 col-md-9" src="/images/1.jpg"/>
+          
+      <div class="gallery-images col-xs-3 col-lg-3 col-md-3">
+        <div class="image">
+          <img src="images/1.jpg" data-id="1">
+        </div>
+        <div class="image">
+          <img src="images/2.jpg" data-id="2">
+        </div>
+        <div class="image">
+          <img src="images/3.jpg" data-id="3">
+        </div>
+        <div class="image">
+          <img src="images/4.jpg" data-id="4">
+        </div>
+        <div class="image">
+          <img src="images/5.jpg" data-id="5">
+        </div>
+        <div class="image">
+          <img src="images/6.jpg" data-id="6">
+        </div>
+        <div class="image">
+          <img src="images/7.jpg" data-id="7">
+        </div>
+        <div class="image">
+          <img src="images/8.jpg" data-id="8">
+        </div>
+        <div class="image">
+          <img src="images/9.jpg" data-id="9">
+        </div>
+      </div>  
+      <div class="clear clearfix"></div>
 		</div>
 	</div>
+
+
 	
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="http://feather.aviary.com/imaging/v3/editor.js"></script>

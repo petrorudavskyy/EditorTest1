@@ -1,13 +1,13 @@
 
 $(document).ready(function() {
-
+  
 	var originalImageSrc = $('#editable-image').attr('src');
 	var currentImage; // assigned when the Edit button is clicked
 
 	// Image Editor configuration, using Creative CDK IPI
 	var csdkImageEditor = new Aviary.Feather({
 		apiKey: 'f1c391379dd74ed7b07fd73c2cac413d',
-		tools: ['crop','text','effects','resize'],
+		tools: 'all',
 		onSave: function(imageID, newURL) {
 			currentImage.src = newURL;
 			csdkImageEditor.close();
@@ -45,4 +45,35 @@ $(document).ready(function() {
 			$('#editable-image').attr('src', originalImageSrc);
 		}
 	});
+  // Adding User Image from Url Provided
+  $("#url-form").on("submit", function(e){
+    var url = $(".url-box").val();
+    $("#editable-image").attr("src", url);
+    e.preventDefault();
+  });
+  
+  $('.image img').click(function(event) {
+		// detect data-id for later
+		var id = $(this).data('id');
+		// grab src to replace #editable-image
+		var src = $(this).attr('src');
+		// set #editable-image
+		var img = $('#editable-image');
+
+		img.fadeOut('fast', function() {
+			$(this).attr({src: src,});
+			$(this).fadeIn('fast');
+		});
+	});
+  // Upload image
+  $(":file").change(function () {
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+      reader.onload = imageIsLoaded;
+      reader.readAsDataURL(this.files[0]);
+    }
+  });
+  function imageIsLoaded(e) {
+    $('#editable-image').attr('src', e.target.result);
+  };
 });
